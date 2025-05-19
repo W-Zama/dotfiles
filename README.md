@@ -11,7 +11,7 @@ git clone git@github.com:W-Zama/dotfiles.git ~/dotfiles
 ### 2. Run the install script
 
 ```bash
-./install.sh
+.bin/install.sh
 ```
 
 `~`配下にdotfileのシンボリックリンクを作成します。

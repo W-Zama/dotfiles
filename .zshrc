@@ -39,5 +39,13 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=/opt/homebrew/bin:~/development/flutter/bin:$PATH
 export PATH="/opt/homebrew/opt/protobuf@3.20/bin:$PATH"
 
-eval "$(anyenv init -)"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Development environment settings
 eval "$(direnv hook zsh)"
+eval "$(anyenv init -)"
+eval "$(pyenv init -)"
+cd /usr/src/btob-fbz-api
+export EDITOR="vi"

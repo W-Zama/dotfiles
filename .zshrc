@@ -47,5 +47,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(direnv hook zsh)"
 eval "$(anyenv init -)"
 eval "$(pyenv init -)"
-cd /usr/src/btob-fbz-api
+# cd /usr/src/btob-fbz-api
 export EDITOR="vi"
+
+
+eval "$(nodenv init -)"

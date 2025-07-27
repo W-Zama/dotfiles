@@ -1,7 +1,8 @@
 .DS_Store
 
 # .config配下を全てignore
-.config/*
+.config/**
 
 # .config配下の特定のファイルをignoreから除外（追跡する）
+!/.config/karabiner/
 !/.config/karabiner/**

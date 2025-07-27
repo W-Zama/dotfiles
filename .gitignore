@@ -1,2 +1,7 @@
 .DS_Store
-.config/raycast/**
+
+# .config配下を全てignore
+.config/*
+
+# .config配下の特定のファイルをignoreから除外（追跡する）
+!/.config/karabiner/** */

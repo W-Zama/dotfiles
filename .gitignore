@@ -4,4 +4,4 @@
 .config/*
 
 # .config配下の特定のファイルをignoreから除外（追跡する）
-!/.config/karabiner/** */
+!/.config/karabiner/**

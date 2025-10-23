@@ -1,0 +1,21 @@
+[user]
+	name = W-Zama
+	email = wataru.zama@zozo.com
+[alias]
+    aa = add -A
+    cm = commit -m
+    pod = push origin develop
+    pom = push origin main
+    b = branch
+    d = diff
+    sw = switch
+    re = restore
+    st = stash
+    me = merge
+    l = log
+    s = status
+    ss = status -s
+[include]
+	path = ~/.gitconfig_shared
+[core]
+	excludesfile = /Users/wataru.zama/.gitignore_global

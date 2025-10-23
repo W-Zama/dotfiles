@@ -1,6 +1,18 @@
 # Aliases
+alias ls='ls -G'
 alias ll='ls -l'
-alias la='ls -a'
+alias la='ls -A'
+alias l='ls -lhA'
+
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gp='git push'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # zplug installation check
 if [[ ! -d ~/.zplug ]]; then
@@ -52,8 +64,3 @@ export EDITOR="vi"
 
 
 eval "$(nodenv init -)"
-
-# export AWS_PROFILE="fbz-dev-poweruser"
-# export CLAUDE_CODE_USE_BEDROCK=1
-# export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-1:731986286237:application-inference-profile/tsa64w8ci0ef"
-# export AWS_REGION="us-east-1"

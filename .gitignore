@@ -15,11 +15,6 @@
 !/.bin/
 /.bin/*
 !/.bin/install.sh
-
-!/.claude/
-/.claude/*
-!/.claude/settings.json
-
 !/.config/
 /.config/*
 !/.config/karabiner/

@@ -16,17 +16,9 @@ git clone git@github.com:W-Zama/dotfiles.git ~/dotfiles
 
 `~`配下にdotfileのシンボリックリンクを作成します。
 
-## 設定ファイル一覧
+## 管理ファイル一覧
 
-| ファイル | 説明 |
-|---------|------|
-| `.zshrc` | Zsh設定 |
-| `.vimrc` | Vim設定 |
-| `.gitconfig` | Git設定 |
-| `.gitignore` | Git除外設定 |
-| `.claude/settings.json` | Claude設定 |
-| `.config/karabiner/karabiner.json` | Karabiner-Elements設定 |
-| `.bin/install.sh` | インストールスクリプト |
+管理対象のファイルは [.gitignore](.gitignore) を参照してください（ホワイトリスト形式で管理）。
 
 ---
 

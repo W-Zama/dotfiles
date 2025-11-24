@@ -4,6 +4,22 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Command + Shift + Delete でカーソルの右側を削除",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [{ "key_code": "delete_forward" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Left Command + Controlで英語入力(英数モード)、Right Command + Controlで日本語入力(ひらがなモード)に切り替え",
                         "manipulators": [
                             {

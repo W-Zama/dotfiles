@@ -1,8 +1,27 @@
-.DS_Store
+# ホワイトリスト形式: 全てを無視し、特定のファイルのみ追跡
 
-# .config配下を全てignore
-.config/**
+# 全てを無視
+/*
+/.*
 
-# .config配下の特定のファイルをignoreから除外（追跡する）
+# 追跡するファイル
+!/.gitignore
+!/.gitconfig
+!/.vimrc
+!/.zshrc
+!/README.md
+
+# 追跡するディレクトリ
+!/.bin/
+/.bin/*
+!/.bin/install.sh
+
+!/.claude/
+/.claude/*
+!/.claude/settings.json
+
+!/.config/
+/.config/*
 !/.config/karabiner/
-!/.config/karabiner/**
+/.config/karabiner/*
+!/.config/karabiner/karabiner.json

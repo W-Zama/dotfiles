@@ -49,7 +49,6 @@ zplug load --verbose
 # --- End of zplug setup ---
 
 export PATH=$HOME/development/flutter/bin:$PATH
-export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=/opt/homebrew/bin:~/development/flutter/bin:$PATH
 export PATH="/opt/homebrew/opt/protobuf@3.20/bin:$PATH"
 
@@ -61,8 +60,19 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(direnv hook zsh)"
 eval "$(anyenv init -)"
 eval "$(pyenv init -)"
+
+# goenv の GOPATH 管理を無効化してから初期化
+export GOENV_DISABLE_GOPATH=1
+eval "$(goenv init -)"
+
+eval "$(nodenv init -)"
+
 # cd /usr/src/btob-fbz-api
 export EDITOR="vi"
 
-
-eval "$(nodenv init -)"
+# Go 環境設定（goenv init の後に設定）
+export GOPATH="$HOME/go"
+export GOMODCACHE="$GOPATH/pkg/mod"
+export GO111MODULE=on
+export GOPROXY="https://proxy.golang.org,direct"
+export PATH="$GOPATH/bin:$PATH"

@@ -11,7 +11,7 @@ alias gcm='git commit -m'
 alias gp='git push'
 alias gs='git status'
 alias gss='git status -s'
-alias gwr='gtr'
+alias gtr='git gtr'
 
 alias ..='cd ..'
 alias ...='cd ../..'

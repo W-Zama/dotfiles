@@ -19,3 +19,5 @@
 	path = ~/.gitconfig_shared
 [core]
 	excludesfile = /Users/wataru.zama/.gitignore_global
+[gtr "editor"]
+	default = code

@@ -21,3 +21,5 @@
 	excludesfile = /Users/wataru.zama/.gitignore_global
 [gtr "editor"]
 	default = code
+[gtr "copy"]
+	include = **/*

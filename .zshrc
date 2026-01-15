@@ -6,12 +6,17 @@ alias l='ls -lhA'
 
 alias ga='git add'
 alias gaa='git add -A'
+alias gau='git add -u'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gp='git push'
 alias gs='git status'
 alias gss='git status -s'
+alias gsw='git sw'
+alias gd='git diff'
+alias gdn='git diff --name-only'
 alias gtr='git gtr'
+
 
 alias ..='cd ..'
 alias ...='cd ../..'

@@ -1,0 +1,127 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "WebSearch",
+      "mcp__spec-workflow",
+      "mcp__serena",
+      "mcp__atlassian",
+      "mcp__vibe_kanban",
+      "mcp__context7",
+      "mcp__shopify-dev-mcp",
+      "Bash(grep)",
+      "Bash(cat)",
+      "Fetch  ",
+      "mcp__confluence__confluence_get_page",
+      "mcp__confluence__confluence_get_comments",
+      "mcp__confluence__confluence_get_labels",
+      "mcp__confluence__confluence_get_page_children",
+      "mcp__confluence__confluence_search",
+      "mcp__confluence__confluence_search_user",
+      "mcp__pagerduty__list_log_entries",
+      "mcp__pagerduty__list_alert_grouping_settings",
+      "mcp__pagerduty__get_alert_grouping_setting",
+      "mcp__pagerduty__list_alerts_from_incident",
+      "mcp__pagerduty__get_alert_from_incident",
+      "mcp__pagerduty__list_incidents",
+      "mcp__pagerduty__get_incident",
+      "mcp__pagerduty__get_outlier_incident",
+      "mcp__pagerduty__get_past_incidents",
+      "mcp__pagerduty__get_related_incidents",
+      "mcp__pagerduty__list_incident_notes",
+      "mcp__pagerduty__list_incident_workflows",
+      "mcp__pagerduty__get_incident_workflow",
+      "mcp__pagerduty__list_services",
+      "mcp__backlog__get_myself",
+      "mcp__backlog__get_space",
+      "mcp__backlog__get_users",
+      "mcp__backlog__get_project",
+      "mcp__backlog__get_project_list",
+      "mcp__backlog__get_issue",
+      "mcp__backlog__get_issues",
+      "mcp__backlog__count_issues",
+      "mcp__backlog__get_issue_comments",
+      "mcp__backlog__get_issue_types",
+      "mcp__backlog__get_categories",
+      "mcp__backlog__get_custom_fields",
+      "mcp__backlog__get_priorities",
+      "mcp__backlog__get_resolutions",
+      "mcp__backlog__get_version_milestone_list",
+      "mcp__backlog__get_git_repositories",
+      "mcp__backlog__get_git_repository",
+      "mcp__backlog__get_pull_request",
+      "mcp__backlog__get_pull_requests",
+      "mcp__backlog__get_pull_requests_count",
+      "mcp__backlog__get_pull_request_comments",
+      "mcp__backlog__get_wiki",
+      "mcp__backlog__get_wiki_pages",
+      "mcp__backlog__get_wikis_count",
+      "mcp__backlog__get_document",
+      "mcp__backlog__get_documents",
+      "mcp__backlog__get_document_tree",
+      "mcp__backlog__get_notifications",
+      "mcp__backlog__count_notifications",
+      "mcp__backlog__get_watching_list_items",
+      "mcp__backlog__get_watching_list_count",
+      "mcp__plugin_slack_slack__slack_read_channel",
+      "mcp__plugin_slack_slack__slack_read_thread",
+      "mcp__plugin_slack_slack__slack_read_canvas",
+      "mcp__plugin_slack_slack__slack_read_user_profile",
+      "mcp__plugin_slack_slack__slack_search_channels",
+      "mcp__plugin_slack_slack__slack_search_public",
+      "mcp__plugin_slack_slack__slack_search_public_and_private",
+      "mcp__plugin_slack_slack__slack_search_users",
+      "Bash(aws configure list-profiles)",
+      "Bash(aws sso login --profile *)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "disabledMcpjsonServers": ["atlassian"],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'export PATH=/opt/homebrew/bin:/Users/wataru.zama/go/bin:/Users/wataru.zama/development/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> \"$CLAUDE_ENV_FILE\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Codeが許可を求めています\" with title \"Claude Code\" subtitle \"確認待ち\" sound name \"Glass\"'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"タスクが完了しました\" with title \"Claude Code\" subtitle \"処理終了\" sound name \"Hero\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "ccstatusline",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "otel-vcs-context@zozomo-claude-code-plugins": true,
+    "commit-commands@claude-plugins-official": true,
+    "slack@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": false
+}

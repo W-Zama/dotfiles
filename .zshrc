@@ -16,9 +16,10 @@ alias gss='git status -s'
 alias gsw='git sw'
 alias gd='git diff'
 alias gds='git diff --staged'
-
 alias gdn='git diff --name-only'
 alias gtr='git gtr'
+alias gr='git restore'
+alias gr.='git restore .'
 
 
 alias ..='cd ..'

@@ -22,6 +22,7 @@ alias gr='git restore'
 alias gr.='git restore .'
 alias gps='git push -u origin HEAD'
 alias gpl='git pull'
+alias gb='git branch'
 
 
 alias ..='cd ..'

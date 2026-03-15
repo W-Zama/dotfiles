@@ -29,6 +29,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+alias c='claude'
+
 # zplug installation check
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
@@ -90,3 +92,4 @@ export GO111MODULE=on
 export GOPROXY="https://proxy.golang.org,direct"
 export PATH="$GOPATH/bin:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"

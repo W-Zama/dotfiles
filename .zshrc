@@ -93,3 +93,12 @@ export GOPROXY="https://proxy.golang.org,direct"
 export PATH="$GOPATH/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/wataru.zama/.bun/_bun" ] && source "/Users/wataru.zama/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='bun "/Users/wataru.zama/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'

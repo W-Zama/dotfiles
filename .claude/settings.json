@@ -13,7 +13,7 @@
       "Bash(ls *)",
       "Bash(cat *)",
       "Bash(find *)",
-      "Fetch",
+      "WebFetch",
       "mcp__confluence__confluence_get_page",
       "mcp__confluence__confluence_get_comments",
       "mcp__confluence__confluence_get_labels",
@@ -73,11 +73,57 @@
       "mcp__plugin_slack_slack__slack_search_public",
       "mcp__plugin_slack_slack__slack_search_public_and_private",
       "mcp__plugin_slack_slack__slack_search_users",
+      "Bash(gh pr list*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh pr checks*)",
+      "Bash(gh pr status*)",
+      "Bash(gh issue list*)",
+      "Bash(gh issue view*)",
+      "Bash(gh issue status*)",
+      "Bash(gh repo view*)",
+      "Bash(gh repo list*)",
+      "Bash(gh run list*)",
+      "Bash(gh run view*)",
+      "Bash(gh release list*)",
+      "Bash(gh release view*)",
+      "Bash(gh search *)",
+      "Bash(gh auth status*)",
       "Bash(aws configure list-profiles)",
       "Bash(aws sso login --profile *)",
-      "mcp__github",
+      "Bash(aws * describe-*)",
+      "Bash(aws * list-*)",
+      "Bash(aws * get-*)",
+      "Bash(aws sts get-caller-identity*)",
+      "Bash(aws logs *)",
+      "Bash(aws s3 ls *)",
+      "Bash(aws s3 cp s3://*)",
+      "mcp__github__get_me",
+      "mcp__github__get_commit",
+      "mcp__github__get_file_contents",
+      "mcp__github__get_label",
+      "mcp__github__get_latest_release",
+      "mcp__github__get_release_by_tag",
+      "mcp__github__get_tag",
+      "mcp__github__get_team_members",
+      "mcp__github__get_teams",
+      "mcp__github__issue_read",
+      "mcp__github__list_branches",
+      "mcp__github__list_commits",
+      "mcp__github__list_issue_types",
+      "mcp__github__list_issues",
+      "mcp__github__list_pull_requests",
+      "mcp__github__list_releases",
+      "mcp__github__list_tags",
+      "mcp__github__pull_request_read",
+      "mcp__github__search_code",
+      "mcp__github__search_issues",
+      "mcp__github__search_pull_requests",
+      "mcp__github__search_repositories",
+      "mcp__github__search_users",
       "mcp__aws__search_documentation",
       "mcp__aws__read_documentation",
+      "mcp__aws__read_sections",
       "mcp__aws__recommend",
       "mcp__aws-knowledge-mcp-server__aws___search_documentation",
       "mcp__aws-knowledge-mcp-server__aws___read_documentation",
@@ -87,11 +133,11 @@
       "mcp__aws-api-mcp-server__suggest_aws_commands"
     ],
     "deny": [],
-    "ask": []
+    "ask": [
+      "Bash(gh api *)"
+    ]
   },
-  "disabledMcpjsonServers": [
-    "atlassian"
-  ],
+  "disabledMcpjsonServers": ["atlassian"],
   "hooks": {
     "SessionStart": [
       {
@@ -104,13 +150,13 @@
         ]
       }
     ],
-    "Notification": [
+    "PermissionRequest": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeが許可を求めています\" with title \"Claude Code\" subtitle \"確認待ち\" sound name \"Glass\"'"
+            "command": "osascript -e 'display notification \"Claude Codeが許可を求めています\" with title \"Claude Code\" subtitle \"確認待ち\" sound name \"Funk\"'"
           }
         ]
       }
@@ -121,7 +167,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"タスクが完了しました\" with title \"Claude Code\" subtitle \"処理終了\" sound name \"Hero\"'"
+            "command": "osascript -e 'display notification \"タスクが完了しました\" with title \"Claude Code\" subtitle \"処理終了\" sound name \"Blow\"'"
           }
         ]
       }
@@ -135,12 +181,10 @@
     "otel-vcs-context@zozomo-claude-code-plugins": true,
     "commit-commands@claude-plugins-official": true,
     "slack@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "claude-mem@thedotmack": true,
+    "code-review@claude-plugins-official": true
   },
-  "language": "Japanese",
-  "alwaysThinkingEnabled": false,
-  "effortLevel": "high",
-  "voiceEnabled": true,
   "extraKnownMarketplaces": {
     "thedotmack": {
       "source": {
@@ -148,5 +192,9 @@
         "repo": "thedotmack/claude-mem"
       }
     }
-  }
+  },
+  "language": "Japanese",
+  "alwaysThinkingEnabled": false,
+  "effortLevel": "high",
+  "voiceEnabled": true
 }

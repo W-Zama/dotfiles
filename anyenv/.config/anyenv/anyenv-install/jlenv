@@ -1,2 +1,0 @@
-install_env https://github.com/HiroakiMikami/jlenv
-install_plugin julia-build https://github.com/HiroakiMikami/julia-build

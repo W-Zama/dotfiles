@@ -1,0 +1,2 @@
+install_env https://github.com/crenv/crenv.git
+install_plugin crystal-build https://github.com/crenv/crystal-build.git

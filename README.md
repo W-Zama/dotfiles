@@ -1,25 +1,57 @@
 # dotfiles
 
+[GNU Stow](https://www.gnu.org/software/stow/) で管理する dotfiles。
+
 ## Installation
 
-### 1. Clone the repository
+### 1. Install GNU Stow
+
+```bash
+brew install stow
+```
+
+### 2. Clone the repository
 
 ```bash
 git clone git@github.com:W-Zama/dotfiles.git ~/dotfiles
 ```
 
-### 2. Run the install script
+### 3. Run the install script
 
 ```bash
 .bin/install.sh
 ```
 
-`~`配下にdotfileのシンボリックリンクを作成します。
+全パッケージのシンボリックリンクを `~` 配下に作成します。
 
-## 管理ファイル一覧
+## Usage
 
-管理対象のファイルは [.gitignore](.gitignore) を参照してください（ホワイトリスト形式で管理）。
+```bash
+# 全パッケージをインストール
+.bin/install.sh
 
----
+# 特定のパッケージだけインストール
+.bin/install.sh zsh git
 
-最終更新日: 2025-11-24
+# シンボリックリンクを削除
+.bin/install.sh -D
+
+# 特定のパッケージだけ削除
+.bin/install.sh -D zsh
+```
+
+## Packages
+
+| Package | Contents |
+|---|---|
+| `zsh` | `.zshrc` |
+| `git` | `.gitconfig`, `.config/git/ignore` |
+| `vim` | `.vimrc` |
+| `karabiner` | `.config/karabiner/karabiner.json` |
+| `claude` | `.claude/settings.json` |
+| `gh` | `.config/gh/config.yml`, `.config/gh/hosts.yml` |
+| `ghostty` | `.config/ghostty/config` |
+| `ccstatusline` | `.config/ccstatusline/settings.json` |
+| `anyenv` | `.config/anyenv/anyenv-install/` |
+| `configstore` | `.config/configstore/update-notifier-takt.json` |
+| `raycast` | `.config/raycast/` |

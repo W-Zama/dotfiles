@@ -24,6 +24,8 @@ alias gps='git push -u origin HEAD'
 alias gpl='git pull'
 alias gb='git branch --sort=-committerdate'
 alias gm-='git merge -'
+alias gclr='git restore . && git clean -fd .'
+alias gupdate='git add -A && git commit -m "update"'
 
 alias ..='cd ..'
 alias ...='cd ../..'

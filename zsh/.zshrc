@@ -33,6 +33,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias c='claude'
+alias cf='claude -c --fork-session'
+alias cc='claude -c'
+alias cr='claude -r'
 
 # zplug installation check
 if [[ ! -d ~/.zplug ]]; then

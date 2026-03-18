@@ -9,6 +9,7 @@
       "mcp__vibe_kanban",
       "mcp__context7",
       "mcp__shopify-dev-mcp",
+      "mcp__chrome-devtools",
       "Bash(grep *)",
       "Bash(ls *)",
       "Bash(cat *)",
@@ -130,14 +131,29 @@
       "mcp__aws-knowledge-mcp-server__aws___recommend",
       "mcp__aws-knowledge-mcp-server__aws___get_regional_availability",
       "mcp__aws-knowledge-mcp-server__aws___list_regions",
-      "mcp__aws-api-mcp-server__suggest_aws_commands"
+      "mcp__aws-api-mcp-server__suggest_aws_commands",
+      "mcp__anki__list_decks",
+      "mcp__anki__find_notes",
+      "mcp__anki__notes_info",
+      "mcp__anki__model_names",
+      "mcp__anki__model_field_names",
+      "mcp__anki__model_styling",
+      "mcp__anki__get_due_cards",
+      "mcp__anki__get_fsrs_params",
+      "mcp__anki__get_card_memory_state",
+      "mcp__anki__get_media_files_names",
+      "mcp__anki__gui_current_card",
+      "mcp__anki__present_card",
+      "mcp__anki__sync"
     ],
     "deny": [],
     "ask": [
       "Bash(gh api *)"
     ]
   },
-  "disabledMcpjsonServers": ["atlassian"],
+  "disabledMcpjsonServers": [
+    "atlassian"
+  ],
   "hooks": {
     "SessionStart": [
       {
@@ -196,5 +212,6 @@
   "language": "Japanese",
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }

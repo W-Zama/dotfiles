@@ -144,7 +144,9 @@
       "mcp__anki__get_media_files_names",
       "mcp__anki__gui_current_card",
       "mcp__anki__present_card",
-      "mcp__anki__sync"
+      "mcp__anki__sync",
+      "mcp__anki__gui_browse",
+      "mcp__anki__add_notes"
     ],
     "deny": [],
     "ask": [
@@ -161,7 +163,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'export PATH=/opt/homebrew/bin:/Users/wataru.zama/go/bin:/Users/wataru.zama/development/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> \"$CLAUDE_ENV_FILE\""
+            "command": "echo 'export PATH=/Users/wataru.zama/.anyenv/envs/goenv/shims:/Users/wataru.zama/.anyenv/envs/goenv/versions/1.25.8/bin:/opt/homebrew/bin:/Users/wataru.zama/go/bin:/Users/wataru.zama/development/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> \"$CLAUDE_ENV_FILE\" && echo 'export GOROOT=/Users/wataru.zama/.anyenv/envs/goenv/versions/1.25.8' >> \"$CLAUDE_ENV_FILE\" && echo 'export GOPATH=/Users/wataru.zama/go' >> \"$CLAUDE_ENV_FILE\" && echo 'export GO111MODULE=on' >> \"$CLAUDE_ENV_FILE\""
           }
         ]
       }

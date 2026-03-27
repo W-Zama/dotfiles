@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Aliases
 alias ls='ls -G'
 alias ll='ls -l'
@@ -53,11 +60,11 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions", as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", as:plugin
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 
 # プラグインがインストールされていなければインストールする
-if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install plugins? [y/N]: "
     if read -q; then
         echo
@@ -67,7 +74,7 @@ if ! zplug check --verbose; then
 fi
 
 # インストールされたプラグインを読み込む
-zplug load --verbose
+zplug load
 
 # --- End of zplug setup ---
 
@@ -81,14 +88,22 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Development environment settings
 eval "$(direnv hook zsh)"
-eval "$(anyenv init -)"
-eval "$(pyenv init -)"
 
-# goenv の GOPATH 管理を無効化してから初期化
+# anyenv は pyenv/goenv/nodenv を内部で初期化するので、個別の init は不要
+# eval "$(anyenv init -)"  # 重いので遅延ロードに置き換え
+
+# pyenv (遅延ロード)
+export PYENV_ROOT="$HOME/.anyenv/envs/pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+
+# goenv (遅延ロード)
 export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
+export GOENV_ROOT="$HOME/.anyenv/envs/goenv"
+export PATH="$GOENV_ROOT/bin:$GOENV_ROOT/shims:$PATH"
 
-eval "$(nodenv init -)"
+# nodenv (遅延ロード)
+export NODENV_ROOT="$HOME/.anyenv/envs/nodenv"
+export PATH="$NODENV_ROOT/bin:$NODENV_ROOT/shims:$PATH"
 
 # cd /usr/src/btob-fbz-api
 export EDITOR="vi"
@@ -110,3 +125,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias claude-mem='bun "/Users/wataru.zama/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

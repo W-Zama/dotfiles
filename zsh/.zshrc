@@ -73,7 +73,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias c='claude'
-alias cf='claude -c --fork-session'
+alias cfc='claude -c --fork-session'
+alias cfr='claude -r --fork-session'
 alias cc='claude -c'
 alias cr='claude -r'
 

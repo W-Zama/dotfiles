@@ -72,11 +72,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias c='claude'
-alias cfc='claude -c --fork-session'
-alias cfr='claude -r --fork-session'
-alias cc='claude -c'
-alias cr='claude -r'
+alias c='claude --model claude-opus-4-6'
+alias cfc='claude -c --fork-session --model claude-opus-4-6'
+alias cfr='claude -r --fork-session --model claude-opus-4-6'
+alias cc='claude -c --model claude-opus-4-6'
+alias cr='claude -r --model claude-opus-4-6'
 
 alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
 
@@ -92,3 +92,7 @@ eval "$(direnv hook zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

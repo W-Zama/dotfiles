@@ -72,11 +72,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias c='claude --model claude-opus-4-6'
-alias cfc='claude -c --fork-session --model claude-opus-4-6'
-alias cfr='claude -r --fork-session --model claude-opus-4-6'
-alias cc='claude -c --model claude-opus-4-6'
-alias cr='claude -r --model claude-opus-4-6'
+alias c='claude --model claude-sonnet-5'
+alias cfc='claude -c --fork-session --model claude-sonnet-5'
+alias cfr='claude -r --fork-session --model claude-sonnet-5'
+alias cc='claude -c --model claude-sonnet-5'
+alias cr='claude -r --model claude-sonnet-5'
 
 alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
 

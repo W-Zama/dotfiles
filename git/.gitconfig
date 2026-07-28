@@ -22,4 +22,4 @@
 [gtr "editor"]
 	default = code
 [gtr "copy"]
-	include = **/*
+	includeDirs = .claude

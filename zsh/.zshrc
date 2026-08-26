@@ -1,7 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# NOTE: -t 1 ガードは VSCode 等の shell environment resolution（non-TTY の zsh -ilc）で
+# gitstatus が初期化失敗して exit 1 になり、PATH が取り込まれなくなるのを防ぐため
+if [[ -t 1 && -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
@@ -82,8 +84,14 @@ alias cn='claude --model "claude-opus-5[1m]" --name'
 alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
 
 # --- Plugins & Tools ---
-# sheldon (plugin manager)
-eval "$(sheldon source)"
+# 対話TTYのみロード（VSCode等の環境解決 zsh -ilc では gitstatus がエラーになるためスキップ）
+if [[ -t 1 ]]; then
+  # sheldon (plugin manager)
+  eval "$(sheldon source)"
+
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -91,12 +99,11 @@ eval "$(direnv hook zsh)"
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Claude Code
 export ENABLE_PROMPT_CACHING_1H=1
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

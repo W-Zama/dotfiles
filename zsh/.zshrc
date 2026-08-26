@@ -70,6 +70,8 @@ alias gm-='git merge -'
 alias gclr='echo "restore & clean する？ (y/N)" && read -q && echo && git restore . && git clean -fd .'
 alias gupdate='git add -A && git commit -m "update"'
 
+alias reload='source ~/.zshrc'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

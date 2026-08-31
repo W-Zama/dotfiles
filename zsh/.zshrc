@@ -61,7 +61,6 @@ alias gdn='git diff --name-only'
 alias gtr='git gtr'
 alias gtrn='git gtr new'
 alias gtre='git gtr editor'
-alias g='git gtr new -e'
 alias gr='git restore'
 alias gr.='git restore .'
 alias gps='git push -u origin HEAD'
@@ -85,6 +84,8 @@ alias cr='claude -r --model "claude-opus-5[1m]"'
 alias cn='claude --model "claude-opus-5[1m]" --name'
 
 alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
+
+ g() { git gtr new -e "$@" || git gtr editor "$1"; }
 
 # --- Plugins & Tools ---
 # 対話TTYのみロード（VSCode等の環境解決 zsh -ilc では gitstatus がエラーになるためスキップ）

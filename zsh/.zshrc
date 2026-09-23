@@ -76,12 +76,16 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias c='claude --model "claude-opus-5[1m]"'
-alias cfc='claude -c --fork-session --model "claude-opus-5[1m]"'
-alias cfr='claude -r --fork-session --model "claude-opus-5[1m]"'
-alias cc='claude -c --model "claude-opus-5[1m]"'
-alias cr='claude -r --model "claude-opus-5[1m]"'
-alias cn='claude --model "claude-opus-5[1m]" --name'
+alias c='claude --model "claude-opus-5-5[1m]"'
+alias cfc='claude -c --fork-session --model "claude-opus-5-5[1m]"'
+alias cfr='claude --fork-session --model "claude-opus-5-5[1m]" -r'
+alias cc='claude -c --model "claude-opus-5-5[1m]"'
+alias cr='claude -r --model "claude-opus-5-5[1m]"'
+alias cn='claude --model "claude-opus-5-5[1m]" --name'
+
+alias a='agent'
+alias ac='agent --continue'
+alias ar='agent --resume'
 
 alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/scripts/worker-service.cjs"'
 
@@ -90,6 +94,10 @@ alias claude-mem='bun "$HOME/.claude/plugins/cache/thedotmack/claude-mem/10.5.5/
 # --- Plugins & Tools ---
 # 対話TTYのみロード（VSCode等の環境解決 zsh -ilc では gitstatus がエラーになるためスキップ）
 if [[ -t 1 ]]; then
+  # p10kのSSH判定をスキップ（内部の who -m に約1.1秒かかるため）
+  typeset -gix P9K_SSH=0
+  typeset -gx _P9K_SSH_TTY=$TTY
+
   # sheldon (plugin manager)
   eval "$(sheldon source)"
 
@@ -105,7 +113,9 @@ eval "$(direnv hook zsh)"
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# 起動が約1.13秒遅くなるため無効化。必要なときは sdkinit で読み込む
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+alias sdkinit='source "$HOME/.sdkman/bin/sdkman-init.sh"'
 
 # Claude Code
 export ENABLE_PROMPT_CACHING_1H=1

@@ -1,2 +1,3 @@
 theme = Alabaster
 font-size = 14
+keybind = super+enter=unbind

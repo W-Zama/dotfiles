@@ -83,6 +83,10 @@ alias cc='claude -c --model "claude-opus-5-5[1m]"'
 alias cr='claude -r --model "claude-opus-5-5[1m]"'
 alias cn='claude --model "claude-opus-5-5[1m]" --name'
 
+alias cdx='codex'
+alias cdxc='codex resume --last'
+alias cdxr='codex resume'
+
 alias a='agent'
 alias ac='agent --continue'
 alias ar='agent --resume'
